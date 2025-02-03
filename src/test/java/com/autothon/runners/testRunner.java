@@ -20,4 +20,6 @@ public class testRunner {
 			return super.scenarios();
 		}
 	}
+	
+ //	mvn test -Dbrowser=chrome -DthreadCount=2 -Dcucumber.filter.tags="@tag2"
 }

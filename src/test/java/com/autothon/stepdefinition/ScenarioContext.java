@@ -39,4 +39,11 @@ public class ScenarioContext {
 	public Object getcontext(String key) {
 		return threadContext.get().put(key, key);
 	}
+	
+	/**
+	 * Clear thecontext value for the current thread. 
+	 */
+	public void clear() {
+		threadContext.get().clear();
+	}
 }
