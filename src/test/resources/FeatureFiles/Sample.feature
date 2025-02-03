@@ -10,3 +10,8 @@ Feature: Sample to test framework
   Scenario: parallel test
     Given User launch the application
     
+    
+  @tag1 @tag2 @yug
+  Scenario: Thread Count Control
+    Given User launch the application
+    

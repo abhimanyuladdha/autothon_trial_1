@@ -10,7 +10,7 @@ import io.cucumber.java.Before;
 
 public class Hooks {
 	private WebDriver driver;
-	private String browser = System.getProperty("browser", "chrome"); // add this to POM
+	private String browser = System.getProperty("browser","chrome");
 
 	@Before
 	public void setup() {
@@ -23,5 +23,6 @@ public class Hooks {
 	@After
 	public void tearDown() {
 		DriverFactory.quitDriver();
+		ScenarioContext.getInstance().clear();
 	}
 }
