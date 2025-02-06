@@ -7,19 +7,16 @@ import io.cucumber.testng.CucumberOptions;
 
 public class testRunner {
 
-	@CucumberOptions(features = "src/test/resources/FeatureFiles", 
-			glue = "com.autothon.stepdefinition",
-			tags = "@tag1",
-			plugin = { "pretty", "html:target/cucumber-reports" }
-	)
+	@CucumberOptions(features = "src/test/resources/FeatureFiles", glue = "com.autothon.stepdefinition", tags = "@tag1", plugin = {
+			"pretty", "com.autothon.utility.TestEventListener" })
 	public class CucumberTestNGRunner extends AbstractTestNGCucumberTests {
 
 		@Override
 		@DataProvider(parallel = true)
-		public Object[][] scenarios(){
+		public Object[][] scenarios() {
 			return super.scenarios();
 		}
 	}
-	
- //	mvn test -Dbrowser=chrome -DthreadCount=2 -Dcucumber.filter.tags="@tag2"
+
+	// mvn test -Dbrowser=chrome -DthreadCount=2 -Dcucumber.filter.tags="@tag2"
 }
