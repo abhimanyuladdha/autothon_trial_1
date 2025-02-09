@@ -1,4 +1,4 @@
-package com.autothon.stepdefinition;
+package com.autothon.stepdefinition.desktop;
 
 import java.util.HashMap;
 import java.util.Map;
