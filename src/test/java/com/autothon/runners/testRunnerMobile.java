@@ -5,14 +5,14 @@ import org.testng.annotations.DataProvider;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-public class testRunner {
+public class testRunnerMobile {
 
-	@CucumberOptions(features = "src/test/resources/FeatureFiles", glue = "com.autothon.stepdefinition", tags = "@tag1", plugin = {
+	@CucumberOptions(features = "src/test/resources/FeatureFiles", glue = "com.autothon.stepdefinition", tags = "@yugMobile", plugin = {
 			"pretty", "com.autothon.utility.TestEventListener" })
 	public class CucumberTestNGRunner extends AbstractTestNGCucumberTests {
 
 		@Override
-		@DataProvider(parallel = true)
+		@DataProvider(parallel = false)
 		public Object[][] scenarios() {
 			return super.scenarios();
 		}

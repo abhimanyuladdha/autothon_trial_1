@@ -1,4 +1,5 @@
 package com.autothon.utility;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -15,7 +16,7 @@ public class WaitLib {
 
 	public static void waitUntilElementVisible(WebElement element, long Sec, WebDriver driver, String elementName) {
 		try {
-			new WebDriverWait(driver, Sec).until(ExpectedConditions.visibilityOf(element));
+			new WebDriverWait(driver, Duration.ofSeconds(Sec)).until(ExpectedConditions.visibilityOf(element));
 		} catch (Exception e) {
 			//ExtentTestManager.addComment("FAILED", elementName + " --> element is not visible");
 			Assert.assertTrue(false, elementName + " --> element is not visible");
@@ -24,7 +25,7 @@ public class WaitLib {
 
 	public static void eWait(WebElement element, WebDriver driver, long Sec, String elementName) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Sec);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Sec));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
 			//ExtentTestManager.addComment("FAILED", elementName + " --> element is not clickable");
@@ -35,7 +36,7 @@ public class WaitLib {
 	public static void waitTillVisibilityOfFrameAndSwitchToIt(WebDriver driver, int timeout, String frameName,
 			String elementName) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, timeout);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameName));
 		} catch (Exception e) {
 			//ExtentTestManager.addComment("FAILED", elementName + " --> frame is not available");
