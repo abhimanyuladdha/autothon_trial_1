@@ -18,6 +18,13 @@ public class PropertyManager {
 		}
 		return prop.getProperty(key);
 	}
+
+    public synchronized String getproperty(String key, String value) {
+        if(!isPropertiesLoaded) {
+            loadProperties();
+        }
+        return prop.getProperty(key, value);
+    }
 	
     private void loadProperties() {
         try (FileInputStream input = new FileInputStream(Paths.get("").toAbsolutePath().toString() + CONFIG_FILE_PATH)) {
