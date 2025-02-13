@@ -6,7 +6,7 @@ import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
-public class EncryptionUtil {
+public class EncryptionUtils {
     private static final String SECRET_KEY = "a2V5VmFsdWVFeGFtcGxlMTIzNDU2";
     private static final String SALT = "c2FsdFZhbHVlRXhhbXBsZTU4NzY1";
 
