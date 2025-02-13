@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class DatabaseUtil {
+public class DatabaseUtils {
     private static HikariDataSource dataSource;
 
     public static void initialize() {
@@ -18,7 +18,7 @@ public class DatabaseUtil {
         String jdbcUrl = propertyManager.getproperty("db.url");
         String username = propertyManager.getproperty("db.username");
         String encryptedPassword = propertyManager.getproperty("db.password");
-        String password = EncryptionUtil.decrypt(encryptedPassword); // Decrypt password
+        String password = EncryptionUtils.decrypt(encryptedPassword); // Decrypt password
 
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(jdbcUrl);

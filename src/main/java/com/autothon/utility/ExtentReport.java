@@ -1,5 +1,7 @@
 package com.autothon.utility;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +24,12 @@ public class ExtentReport {
 
 	public static void setupExtentReport() {
 		if (extent == null) {
-			ExtentSparkReporter htmlReporter = new ExtentSparkReporter("target/ExtentReports/extentReport.html");
+			Date currentDate=new Date();
+			SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH mm ss");
+			String dateToString=format.format(currentDate);
+			String executionStartDate=dateToString.substring(0,10);
+			String executionStartTime=dateToString.substring(12,19).replaceAll(" ","-");
+			ExtentSparkReporter htmlReporter = new ExtentSparkReporter("target/ExtentReports/"+executionStartDate+"/"+"extentReport-"+executionStartTime+".html");
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
 		}
