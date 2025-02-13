@@ -2,6 +2,7 @@ package com.autothon.stepdefinition.desktop;
 
 import java.net.MalformedURLException;
 
+import com.autothon.utility.DatabaseUtil;
 import org.openqa.selenium.WebDriver;
 
 import com.autothon.base.DriverFactory;
@@ -20,6 +21,11 @@ public class Hooks {
 	@Before
 	public void setup() throws MalformedURLException {
 		PropertyManager properties = new PropertyManager();
+
+		// Initialize database connection
+		System.out.println("Initializing database connection...");
+		DatabaseUtil.initialize();
+
 		if (deviceType.equalsIgnoreCase("desktop")) {
 			DriverFactory.setDesktopDriver(browser);
 			desktopDriver = DriverFactory.getDesktopDriver();
@@ -38,6 +44,11 @@ public class Hooks {
 		} else if (deviceType.equalsIgnoreCase("mobile")) {
 			DriverFactory.quitMobileDriver();
 		}
+
+		// Close database connection pool
+		System.out.println("Closing database connection...");
+		DatabaseUtil.closePool();
+
 		ScenarioContext.getInstance().clear();
 	}
 }
