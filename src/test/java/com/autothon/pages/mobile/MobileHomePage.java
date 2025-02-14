@@ -45,7 +45,8 @@ public class MobileHomePage {
 	
 	public void clickAdvertisingButton()
 	{
-		WaitLib.eWait(btn_advertising, driver, 30, "Advertising Button");
+		WaitLib.pause(10);
+		GenericMethods.scrollUsingJavaScriptToWebElement(btn_advertising, driver, "Advertising Button");
 		GenericMethods.clickUsingJavaScript(driver, btn_advertising, "Advertising Button");
 		WaitLib.pause(5);
 	}
