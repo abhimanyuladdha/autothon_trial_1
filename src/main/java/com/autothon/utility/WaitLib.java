@@ -18,7 +18,6 @@ public class WaitLib {
 		try {
 			new WebDriverWait(driver, Duration.ofSeconds(Sec)).until(ExpectedConditions.visibilityOf(element));
 		} catch (Exception e) {
-			//ExtentTestManager.addComment("FAILED", elementName + " --> element is not visible");
 			Assert.assertTrue(false, elementName + " --> element is not visible");
 		}
 	}
@@ -28,7 +27,6 @@ public class WaitLib {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Sec));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
-			//ExtentTestManager.addComment("FAILED", elementName + " --> element is not clickable");
 			Assert.assertTrue(false, elementName + " --> element is not clickable");
 		}
 	}
@@ -39,7 +37,6 @@ public class WaitLib {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameName));
 		} catch (Exception e) {
-			//ExtentTestManager.addComment("FAILED", elementName + " --> frame is not available");
 			Assert.assertTrue(false, elementName + " --> frame is not available");
 		}
 	}
