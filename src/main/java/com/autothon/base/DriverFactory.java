@@ -72,7 +72,7 @@ public class DriverFactory {
 		case("chrome"):
 			DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 			desiredCapabilities.setCapability("platformName", "Android");
-			desiredCapabilities.setCapability("appium:deviceName","demo");
+			desiredCapabilities.setCapability("appium:deviceName","autothonMobileTest");
 			desiredCapabilities.setCapability("appium:automationName", "uiautomator2");
 			desiredCapabilities.setCapability("uiautomator2ServerLaunchTimeout", 120000);
 			desiredCapabilities.setCapability("browserName", browser);

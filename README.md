@@ -14,7 +14,7 @@ Framework Structure:
 
 The package src/main/java/com.autothon.base contains the following classes:
 
-• DriverFactory - 
+• DriverFactory :  
 
 The package src/main/java/com.autothon.utility contains the following classes:
 

@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 public class testRunnerDesktop {
 
-	@CucumberOptions(features = "src/test/resources/FeatureFiles", glue = "com.autothon.stepdefinition", tags = "@tag1", plugin = {
+	@CucumberOptions(features = "src/test/resources/FeatureFiles", glue = "com.autothon.stepdefinition", tags = "@desktopScenario", plugin = {
 			"pretty", "com.autothon.utility.TestEventListener" })
 	public class CucumberTestNGRunner extends AbstractTestNGCucumberTests {
 
@@ -18,5 +18,5 @@ public class testRunnerDesktop {
 		}
 	}
 
-	// mvn test -Dbrowser=chrome -DthreadCount=2 -Dcucumber.filter.tags="@tag2"
+	// mvn test -Dbrowser=Chrome -DdeviceType=desktop -DthreadCount=1 -Dcucumber.filter.tags="@desktopScenario"
 }

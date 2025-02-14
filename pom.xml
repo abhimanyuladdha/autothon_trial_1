@@ -76,12 +76,13 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+		<!--
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
 			<version>7.5.1</version>
 		</dependency>
-
+		-->
 		<!--
 		https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
@@ -121,7 +122,6 @@
 			<artifactId>java-client</artifactId>
 			<version>8.3.0</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
