@@ -9,7 +9,7 @@ public class testRunnerDesktop {
 
 	@CucumberOptions(features = "src/test/resources/FeatureFiles", glue = "com.autothon.stepdefinition", tags = "@desktopScenario", plugin = {
 			"pretty", "com.autothon.utility.TestEventListener" })
-	public class CucumberTestNGRunner extends AbstractTestNGCucumberTests {
+	public static class CucumberTestNGRunner extends AbstractTestNGCucumberTests {
 
 		@Override
 		@DataProvider(parallel = false)
