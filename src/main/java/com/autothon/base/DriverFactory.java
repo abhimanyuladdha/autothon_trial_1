@@ -4,6 +4,8 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+
+import com.epam.healenium.SelfHealingDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -54,6 +56,15 @@ public class DriverFactory {
 			chromeOptions.addArguments("--headless");
 			//WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(chromeOptions);
+			break;
+
+		case "chromehealenium":
+			// Create a normal ChromeDriver
+			WebDriver delegate = new ChromeDriver();
+
+			// Wrap it with Healenium's SelfHealingDriver
+			driver = SelfHealingDriver.create(delegate);
+
 			break;
 
 		default:
